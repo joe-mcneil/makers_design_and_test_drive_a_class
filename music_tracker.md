@@ -53,23 +53,38 @@ returns artist and track
 """
 tracker = MusicTracker()
 tracker.add_track("Beatles", "Yesterday")
-tracker.list_tracks() # => [{"artist": "Beatles, "
-                                track": "Yesterday}]
-"""
-Given a name and no task
-#remind raises an exception
-"""
-reminder = Reminder("Kay")
-reminder.remind() # raises an error with the message "No task set."
+tracker.list_tracks() # => [{"artist": "Beatles", "track": "Yesterday"}]
 
 """
-Given a name and an empty task
-#remind still reminds the user to do the task, even though it looks odd
+Adding multiple tracks
+returns artists and tracks as a list
 """
-reminder = Reminder("Kay")
-reminder.remind_me_to("")
-reminder.remind() # => ", Kay!"
-```
+    tracker = MusicTracker()
+    tracker.add_track("Beatles", "Yesterday")
+    tracker.add_track("Radiohead", "Creep")
+    tracker.list_tracks() # => [{"artist": "Beatles", "track": "Yesterday"}, {"artist": "Radiohead", "track": "Creep"}]
+
+"""
+Adding no tracks/adding none
+rasises an exception
+"""
+tracker = MusicTracker()
+tracker.add_track() # raises an error with the message "Invalid track."
+
+"""
+Adding invalid type as track
+rasises an exception
+"""
+tracker = MusicTracker()
+tracker.add_track(12, 15) # raises an error with the message "Invalid track."
+
+"""
+Adding no tracks and asking to list
+rasises an exception
+"""
+tracker = MusicTracker()
+tracker.list_tracks() # raises an error with the message "No tracks yet"
+
 
 _Encode each example as a test. You can add to the above list as you go._
 
