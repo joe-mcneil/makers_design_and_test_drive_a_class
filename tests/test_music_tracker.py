@@ -22,16 +22,16 @@ def test_add_multiple_track_to_tracker():
 def test_adding_no_track_to_tracker():
     tracker = MusicTracker()
     with pytest.raises(Exception) as e:
-        tracker.add_track(None, None)
+        tracker.add_track()
     actual = str(e.value)
     expected = "Invalid track."
 
     assert actual == expected
 
-def test_adding_integer_as_track_to_tracker():
+def test_adding_invalid_type_to_tracker():
     tracker = MusicTracker()
     with pytest.raises(Exception) as e:
-        tracker.add_track(12, 15)
+        tracker.add_track(12)
     actual = str(e.value)
     expected = "Invalid track."
 

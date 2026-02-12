@@ -3,7 +3,7 @@ class MusicTracker:
     def __init__(self):
         self.tracks = []
 
-    def add_track(self, artist, track):
+    def add_track(self, artist = None, track = None):
         if type(artist) == str and type(track) == str:
             self.tracks.append({"artist": artist, "track": track})
         else:

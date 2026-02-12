@@ -76,7 +76,7 @@ Adding invalid type as track
 rasises an exception
 """
 tracker = MusicTracker()
-tracker.add_track(12, 15) # raises an error with the message "Invalid track."
+tracker.add_track(12) # raises an error with the message "Invalid track."
 
 """
 Adding no tracks and asking to list
